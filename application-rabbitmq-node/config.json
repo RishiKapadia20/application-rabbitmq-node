@@ -1,0 +1,901 @@
+{
+   "attribute" : [
+      {
+         "arg1" : "guest",
+         "arg3" : "",
+         "arg4" : "15672",
+         "label1" : "Username",
+         "label2" : "Password",
+         "label3" : "Node Name",
+         "label4" : "Port",
+         "name" : "RABBITMQ_CREDENTIALS",
+         "secured1" : "0",
+         "secured2" : "1",
+         "secured3" : "0",
+         "secured4" : "0",
+         "value" : ""
+      }
+   ],
+   "hosttemplate" : [
+      {
+         "description" : "Monitoring of a RabbitMQ node",
+         "has_icon" : "0",
+         "managementurls" : [],
+         "name" : "Application - RabbitMQ - Node",
+         "servicechecks" : [
+            {
+               "event_handler" : null,
+               "exception" : null,
+               "name" : "RabbitMQ - Context Switch Rate",
+               "timed_exception" : null
+            },
+            {
+               "event_handler" : null,
+               "exception" : null,
+               "name" : "RabbitMQ - Disk Free",
+               "timed_exception" : null
+            },
+            {
+               "event_handler" : null,
+               "exception" : null,
+               "name" : "RabbitMQ - Disk Free Alarm",
+               "timed_exception" : null
+            },
+            {
+               "event_handler" : null,
+               "exception" : null,
+               "name" : "RabbitMQ - File Descriptors Left",
+               "timed_exception" : null
+            },
+            {
+               "event_handler" : null,
+               "exception" : null,
+               "name" : "RabbitMQ - File Descriptors Used - Percent",
+               "timed_exception" : null
+            },
+            {
+               "event_handler" : null,
+               "exception" : null,
+               "name" : "RabbitMQ - IO Read Avg Time",
+               "timed_exception" : null
+            },
+            {
+               "event_handler" : null,
+               "exception" : null,
+               "name" : "RabbitMQ - IO Read Count",
+               "timed_exception" : null
+            },
+            {
+               "event_handler" : null,
+               "exception" : null,
+               "name" : "RabbitMQ - IO Seek Avg Time",
+               "timed_exception" : null
+            },
+            {
+               "event_handler" : null,
+               "exception" : null,
+               "name" : "RabbitMQ - IO sync Avg Time",
+               "timed_exception" : null
+            },
+            {
+               "event_handler" : null,
+               "exception" : null,
+               "name" : "RabbitMQ - IO Write Avg Time",
+               "timed_exception" : null
+            },
+            {
+               "event_handler" : null,
+               "exception" : null,
+               "name" : "RabbitMQ - IO Write Count",
+               "timed_exception" : null
+            },
+            {
+               "event_handler" : null,
+               "exception" : null,
+               "name" : "RabbitMQ - Memory Alarm",
+               "timed_exception" : null
+            },
+            {
+               "event_handler" : null,
+               "exception" : null,
+               "name" : "RabbitMQ - Memory Used",
+               "timed_exception" : null
+            },
+            {
+               "event_handler" : null,
+               "exception" : null,
+               "name" : "RabbitMQ - Node Running",
+               "timed_exception" : null
+            },
+            {
+               "event_handler" : null,
+               "exception" : null,
+               "name" : "RabbitMQ - Sockets Left",
+               "timed_exception" : null
+            },
+            {
+               "event_handler" : null,
+               "exception" : null,
+               "name" : "RabbitMQ - Sockets Used - percent",
+               "timed_exception" : null
+            }
+         ]
+      }
+   ],
+   "keyword" : [],
+   "servicecheck" : [
+      {
+         "alert_from_failure" : "1",
+         "args" : "-H $HOSTADDRESS$ -m context_switch -w 100 -c 150 -P '%RABBITMQ_CREDENTIALS:4%' -u '%RABBITMQ_CREDENTIALS:1%' -p '%RABBITMQ_CREDENTIALS:2%' -n '%RABBITMQ_CREDENTIALS:3%'",
+         "attribute" : {
+            "name" : "RABBITMQ_CREDENTIALS"
+         },
+         "calculate_rate" : "no",
+         "cascaded_from" : null,
+         "check_attempts" : "3",
+         "check_freshness" : "0",
+         "check_interval" : "300",
+         "checktype" : {
+            "name" : "Active Plugin"
+         },
+         "critical_comparison" : null,
+         "critical_value" : null,
+         "dependencies" : [],
+         "description" : "Rate at which context switching takes place on this node during last statistics interval",
+         "event_handler" : "",
+         "event_handler_always_exec" : "0",
+         "flap_detection_enabled" : "1",
+         "freshness_type" : "renotify",
+         "invertresults" : "0",
+         "keywords" : [],
+         "label" : null,
+         "level" : 0,
+         "markdown_filter" : "0",
+         "name" : "RabbitMQ - Context Switch Rate",
+         "notification_interval" : null,
+         "notification_options" : "w,c,r,u,f",
+         "oid" : null,
+         "plugin" : {
+            "name" : "check_rabbitmq_node"
+         },
+         "retry_check_interval" : "60",
+         "sensitive_arguments" : "1",
+         "servicegroup" : {
+            "name" : "Application - RabbitMQ - Node"
+         },
+         "snmptraprules" : [],
+         "stale_state" : "0",
+         "stale_text" : "",
+         "stale_threshold_seconds" : "3600",
+         "stalking" : "",
+         "volatile" : "0",
+         "warning_comparison" : null,
+         "warning_value" : null
+      },
+      {
+         "alert_from_failure" : "1",
+         "args" : "-H $HOSTADDRESS$ -m disk_free -P '%RABBITMQ_CREDENTIALS:4%' -u '%RABBITMQ_CREDENTIALS:1%' -p '%RABBITMQ_CREDENTIALS:2%' -n '%RABBITMQ_CREDENTIALS:3%'",
+         "attribute" : {
+            "name" : "RABBITMQ_CREDENTIALS"
+         },
+         "calculate_rate" : "no",
+         "cascaded_from" : null,
+         "check_attempts" : "3",
+         "check_freshness" : "0",
+         "check_interval" : "300",
+         "checktype" : {
+            "name" : "Active Plugin"
+         },
+         "critical_comparison" : null,
+         "critical_value" : null,
+         "dependencies" : [],
+         "description" : "Disk space free in bytes",
+         "event_handler" : "",
+         "event_handler_always_exec" : "0",
+         "flap_detection_enabled" : "1",
+         "freshness_type" : "renotify",
+         "invertresults" : "0",
+         "keywords" : [],
+         "label" : null,
+         "level" : 0,
+         "markdown_filter" : "0",
+         "name" : "RabbitMQ - Disk Free",
+         "notification_interval" : null,
+         "notification_options" : "w,c,r,u,f",
+         "oid" : null,
+         "plugin" : {
+            "name" : "check_rabbitmq_node"
+         },
+         "retry_check_interval" : "60",
+         "sensitive_arguments" : "1",
+         "servicegroup" : {
+            "name" : "Application - RabbitMQ - Node"
+         },
+         "snmptraprules" : [],
+         "stale_state" : "0",
+         "stale_text" : "",
+         "stale_threshold_seconds" : "3600",
+         "stalking" : "",
+         "volatile" : "0",
+         "warning_comparison" : null,
+         "warning_value" : null
+      },
+      {
+         "alert_from_failure" : "1",
+         "args" : "-H $HOSTADDRESS$ -m disk_free_alarm -P '%RABBITMQ_CREDENTIALS:4%' -u '%RABBITMQ_CREDENTIALS:1%' -p '%RABBITMQ_CREDENTIALS:2%' -n '%RABBITMQ_CREDENTIALS:3%'",
+         "attribute" : {
+            "name" : "RABBITMQ_CREDENTIALS"
+         },
+         "calculate_rate" : "no",
+         "cascaded_from" : null,
+         "check_attempts" : "3",
+         "check_freshness" : "0",
+         "check_interval" : "300",
+         "checktype" : {
+            "name" : "Active Plugin"
+         },
+         "critical_comparison" : null,
+         "critical_value" : null,
+         "dependencies" : [],
+         "description" : "Alarm used by the system to tell if there is enough disk free",
+         "event_handler" : "",
+         "event_handler_always_exec" : "0",
+         "flap_detection_enabled" : "1",
+         "freshness_type" : "renotify",
+         "invertresults" : "0",
+         "keywords" : [],
+         "label" : null,
+         "level" : 0,
+         "markdown_filter" : "0",
+         "name" : "RabbitMQ - Disk Free Alarm",
+         "notification_interval" : null,
+         "notification_options" : "w,c,r,u,f",
+         "oid" : null,
+         "plugin" : {
+            "name" : "check_rabbitmq_node"
+         },
+         "retry_check_interval" : "60",
+         "sensitive_arguments" : "1",
+         "servicegroup" : {
+            "name" : "Application - RabbitMQ - Node"
+         },
+         "snmptraprules" : [],
+         "stale_state" : "0",
+         "stale_text" : "",
+         "stale_threshold_seconds" : "3600",
+         "stalking" : "",
+         "volatile" : "0",
+         "warning_comparison" : null,
+         "warning_value" : null
+      },
+      {
+         "alert_from_failure" : "1",
+         "args" : "-H $HOSTADDRESS$ -m fd_left -w 1000 -c 500 -P '%RABBITMQ_CREDENTIALS:4%' -u '%RABBITMQ_CREDENTIALS:1%' -p '%RABBITMQ_CREDENTIALS:2%' -n '%RABBITMQ_CREDENTIALS:3%'",
+         "attribute" : {
+            "name" : "RABBITMQ_CREDENTIALS"
+         },
+         "calculate_rate" : "no",
+         "cascaded_from" : null,
+         "check_attempts" : "3",
+         "check_freshness" : "0",
+         "check_interval" : "300",
+         "checktype" : {
+            "name" : "Active Plugin"
+         },
+         "critical_comparison" : null,
+         "critical_value" : null,
+         "dependencies" : [],
+         "description" : "Number of unused file descriptors remaining",
+         "event_handler" : "",
+         "event_handler_always_exec" : "0",
+         "flap_detection_enabled" : "1",
+         "freshness_type" : "renotify",
+         "invertresults" : "0",
+         "keywords" : [],
+         "label" : null,
+         "level" : 0,
+         "markdown_filter" : "0",
+         "name" : "RabbitMQ - File Descriptors Left",
+         "notification_interval" : null,
+         "notification_options" : "w,c,r,u,f",
+         "oid" : null,
+         "plugin" : {
+            "name" : "check_rabbitmq_node"
+         },
+         "retry_check_interval" : "60",
+         "sensitive_arguments" : "1",
+         "servicegroup" : {
+            "name" : "Application - RabbitMQ - Node"
+         },
+         "snmptraprules" : [],
+         "stale_state" : "0",
+         "stale_text" : "",
+         "stale_threshold_seconds" : "3600",
+         "stalking" : "",
+         "volatile" : "0",
+         "warning_comparison" : null,
+         "warning_value" : null
+      },
+      {
+         "alert_from_failure" : "1",
+         "args" : "-H $HOSTADDRESS$ -m fd_used_percent -w 70 -c 80 -P '%RABBITMQ_CREDENTIALS:4%' -u '%RABBITMQ_CREDENTIALS:1%' -p '%RABBITMQ_CREDENTIALS:2%' -n '%RABBITMQ_CREDENTIALS:3%'",
+         "attribute" : {
+            "name" : "RABBITMQ_CREDENTIALS"
+         },
+         "calculate_rate" : "no",
+         "cascaded_from" : null,
+         "check_attempts" : "3",
+         "check_freshness" : "0",
+         "check_interval" : "300",
+         "checktype" : {
+            "name" : "Active Plugin"
+         },
+         "critical_comparison" : null,
+         "critical_value" : null,
+         "dependencies" : [],
+         "description" : "Number of file descriptors used as a percentage of total",
+         "event_handler" : "",
+         "event_handler_always_exec" : "0",
+         "flap_detection_enabled" : "1",
+         "freshness_type" : "renotify",
+         "invertresults" : "0",
+         "keywords" : [],
+         "label" : null,
+         "level" : 0,
+         "markdown_filter" : "0",
+         "name" : "RabbitMQ - File Descriptors Used - Percent",
+         "notification_interval" : null,
+         "notification_options" : "w,c,r,u,f",
+         "oid" : null,
+         "plugin" : {
+            "name" : "check_rabbitmq_node"
+         },
+         "retry_check_interval" : "60",
+         "sensitive_arguments" : "1",
+         "servicegroup" : {
+            "name" : "Application - RabbitMQ - Node"
+         },
+         "snmptraprules" : [],
+         "stale_state" : "0",
+         "stale_text" : "",
+         "stale_threshold_seconds" : "3600",
+         "stalking" : "",
+         "volatile" : "0",
+         "warning_comparison" : null,
+         "warning_value" : null
+      },
+      {
+         "alert_from_failure" : "1",
+         "args" : "-H $HOSTADDRESS$ -m io_read_avg_time -w 1000 -c 2000 -P '%RABBITMQ_CREDENTIALS:4%' -u '%RABBITMQ_CREDENTIALS:1%' -p '%RABBITMQ_CREDENTIALS:2%' -n '%RABBITMQ_CREDENTIALS:3%'",
+         "attribute" : {
+            "name" : "RABBITMQ_CREDENTIALS"
+         },
+         "calculate_rate" : "no",
+         "cascaded_from" : null,
+         "check_attempts" : "3",
+         "check_freshness" : "0",
+         "check_interval" : "300",
+         "checktype" : {
+            "name" : "Active Plugin"
+         },
+         "critical_comparison" : null,
+         "critical_value" : null,
+         "dependencies" : [],
+         "description" : "Average wait time (ms) for each disk read operation in the last statistics interval",
+         "event_handler" : "",
+         "event_handler_always_exec" : "0",
+         "flap_detection_enabled" : "1",
+         "freshness_type" : "renotify",
+         "invertresults" : "0",
+         "keywords" : [],
+         "label" : null,
+         "level" : 0,
+         "markdown_filter" : "0",
+         "name" : "RabbitMQ - IO Read Avg Time",
+         "notification_interval" : null,
+         "notification_options" : "w,c,r,u,f",
+         "oid" : null,
+         "plugin" : {
+            "name" : "check_rabbitmq_node"
+         },
+         "retry_check_interval" : "60",
+         "sensitive_arguments" : "1",
+         "servicegroup" : {
+            "name" : "Application - RabbitMQ - Node"
+         },
+         "snmptraprules" : [],
+         "stale_state" : "0",
+         "stale_text" : "",
+         "stale_threshold_seconds" : "3600",
+         "stalking" : "",
+         "volatile" : "0",
+         "warning_comparison" : null,
+         "warning_value" : null
+      },
+      {
+         "alert_from_failure" : "1",
+         "args" : "-H $HOSTADDRESS$ -m io_read_count -P '%RABBITMQ_CREDENTIALS:4%' -u '%RABBITMQ_CREDENTIALS:1%' -p '%RABBITMQ_CREDENTIALS:2%' -n '%RABBITMQ_CREDENTIALS:3%'",
+         "attribute" : {
+            "name" : "RABBITMQ_CREDENTIALS"
+         },
+         "calculate_rate" : "no",
+         "cascaded_from" : null,
+         "check_attempts" : "3",
+         "check_freshness" : "0",
+         "check_interval" : "300",
+         "checktype" : {
+            "name" : "Active Plugin"
+         },
+         "critical_comparison" : null,
+         "critical_value" : null,
+         "dependencies" : [],
+         "description" : "Rate of read operations by the persister in the last statistics interval",
+         "event_handler" : "",
+         "event_handler_always_exec" : "0",
+         "flap_detection_enabled" : "1",
+         "freshness_type" : "renotify",
+         "invertresults" : "0",
+         "keywords" : [],
+         "label" : null,
+         "level" : 0,
+         "markdown_filter" : "0",
+         "name" : "RabbitMQ - IO Read Count",
+         "notification_interval" : null,
+         "notification_options" : "w,c,r,u,f",
+         "oid" : null,
+         "plugin" : {
+            "name" : "check_rabbitmq_node"
+         },
+         "retry_check_interval" : "60",
+         "sensitive_arguments" : "1",
+         "servicegroup" : {
+            "name" : "Application - RabbitMQ - Node"
+         },
+         "snmptraprules" : [],
+         "stale_state" : "0",
+         "stale_text" : "",
+         "stale_threshold_seconds" : "3600",
+         "stalking" : "",
+         "volatile" : "0",
+         "warning_comparison" : null,
+         "warning_value" : null
+      },
+      {
+         "alert_from_failure" : "1",
+         "args" : "-H $HOSTADDRESS$ -m io_seek_avg_time -P '%RABBITMQ_CREDENTIALS:4%' -u '%RABBITMQ_CREDENTIALS:1%' -p '%RABBITMQ_CREDENTIALS:2%' -n '%RABBITMQ_CREDENTIALS:3%'",
+         "attribute" : {
+            "name" : "RABBITMQ_CREDENTIALS"
+         },
+         "calculate_rate" : "no",
+         "cascaded_from" : null,
+         "check_attempts" : "3",
+         "check_freshness" : "0",
+         "check_interval" : "300",
+         "checktype" : {
+            "name" : "Active Plugin"
+         },
+         "critical_comparison" : null,
+         "critical_value" : null,
+         "dependencies" : [],
+         "description" : "Average wait time (ms) for each seek operation in the last statistics interval",
+         "event_handler" : "",
+         "event_handler_always_exec" : "0",
+         "flap_detection_enabled" : "1",
+         "freshness_type" : "renotify",
+         "invertresults" : "0",
+         "keywords" : [],
+         "label" : null,
+         "level" : 0,
+         "markdown_filter" : "0",
+         "name" : "RabbitMQ - IO Seek Avg Time",
+         "notification_interval" : null,
+         "notification_options" : "w,c,r,u,f",
+         "oid" : null,
+         "plugin" : {
+            "name" : "check_rabbitmq_node"
+         },
+         "retry_check_interval" : "60",
+         "sensitive_arguments" : "1",
+         "servicegroup" : {
+            "name" : "Application - RabbitMQ - Node"
+         },
+         "snmptraprules" : [],
+         "stale_state" : "0",
+         "stale_text" : "",
+         "stale_threshold_seconds" : "3600",
+         "stalking" : "",
+         "volatile" : "0",
+         "warning_comparison" : null,
+         "warning_value" : null
+      },
+      {
+         "alert_from_failure" : "1",
+         "args" : "-H $HOSTADDRESS$ -m io_write_avg_time -w 1000 -c 2000 -P '%RABBITMQ_CREDENTIALS:4%' -u '%RABBITMQ_CREDENTIALS:1%' -p '%RABBITMQ_CREDENTIALS:2%' -n '%RABBITMQ_CREDENTIALS:3%'",
+         "attribute" : {
+            "name" : "RABBITMQ_CREDENTIALS"
+         },
+         "calculate_rate" : "no",
+         "cascaded_from" : null,
+         "check_attempts" : "3",
+         "check_freshness" : "0",
+         "check_interval" : "300",
+         "checktype" : {
+            "name" : "Active Plugin"
+         },
+         "critical_comparison" : null,
+         "critical_value" : null,
+         "dependencies" : [],
+         "description" : "Average wait time (ms) for each disk write operation in the last statistics interval",
+         "event_handler" : "",
+         "event_handler_always_exec" : "0",
+         "flap_detection_enabled" : "1",
+         "freshness_type" : "renotify",
+         "invertresults" : "0",
+         "keywords" : [],
+         "label" : null,
+         "level" : 0,
+         "markdown_filter" : "0",
+         "name" : "RabbitMQ - IO Write Avg Time",
+         "notification_interval" : null,
+         "notification_options" : "w,c,r,u,f",
+         "oid" : null,
+         "plugin" : {
+            "name" : "check_rabbitmq_node"
+         },
+         "retry_check_interval" : "60",
+         "sensitive_arguments" : "1",
+         "servicegroup" : {
+            "name" : "Application - RabbitMQ - Node"
+         },
+         "snmptraprules" : [],
+         "stale_state" : "0",
+         "stale_text" : "",
+         "stale_threshold_seconds" : "3600",
+         "stalking" : "",
+         "volatile" : "0",
+         "warning_comparison" : null,
+         "warning_value" : null
+      },
+      {
+         "alert_from_failure" : "1",
+         "args" : "-H $HOSTADDRESS$ -m io_write_count -P '%RABBITMQ_CREDENTIALS:4%' -u '%RABBITMQ_CREDENTIALS:1%' -p '%RABBITMQ_CREDENTIALS:2%' -n '%RABBITMQ_CREDENTIALS:3%'",
+         "attribute" : {
+            "name" : "RABBITMQ_CREDENTIALS"
+         },
+         "calculate_rate" : "no",
+         "cascaded_from" : null,
+         "check_attempts" : "3",
+         "check_freshness" : "0",
+         "check_interval" : "300",
+         "checktype" : {
+            "name" : "Active Plugin"
+         },
+         "critical_comparison" : null,
+         "critical_value" : null,
+         "dependencies" : [],
+         "description" : "Rate of write operations by the persister in the last statistics interval",
+         "event_handler" : "",
+         "event_handler_always_exec" : "0",
+         "flap_detection_enabled" : "1",
+         "freshness_type" : "renotify",
+         "invertresults" : "0",
+         "keywords" : [],
+         "label" : null,
+         "level" : 0,
+         "markdown_filter" : "0",
+         "name" : "RabbitMQ - IO Write Count",
+         "notification_interval" : null,
+         "notification_options" : "w,c,r,u,f",
+         "oid" : null,
+         "plugin" : {
+            "name" : "check_rabbitmq_node"
+         },
+         "retry_check_interval" : "60",
+         "sensitive_arguments" : "1",
+         "servicegroup" : {
+            "name" : "Application - RabbitMQ - Node"
+         },
+         "snmptraprules" : [],
+         "stale_state" : "0",
+         "stale_text" : "",
+         "stale_threshold_seconds" : "3600",
+         "stalking" : "",
+         "volatile" : "0",
+         "warning_comparison" : null,
+         "warning_value" : null
+      },
+      {
+         "alert_from_failure" : "1",
+         "args" : "-H $HOSTADDRESS$ -m io_sync_avg_time -w 1000 -c 2000 -P '%RABBITMQ_CREDENTIALS:4%' -u '%RABBITMQ_CREDENTIALS:1%' -p '%RABBITMQ_CREDENTIALS:2%' -n '%RABBITMQ_CREDENTIALS:3%'",
+         "attribute" : {
+            "name" : "RABBITMQ_CREDENTIALS"
+         },
+         "calculate_rate" : "no",
+         "cascaded_from" : null,
+         "check_attempts" : "3",
+         "check_freshness" : "0",
+         "check_interval" : "300",
+         "checktype" : {
+            "name" : "Active Plugin"
+         },
+         "critical_comparison" : null,
+         "critical_value" : null,
+         "dependencies" : [],
+         "description" : "Average wait time (ms) for each sync operation in the last statistics interval",
+         "event_handler" : "",
+         "event_handler_always_exec" : "0",
+         "flap_detection_enabled" : "1",
+         "freshness_type" : "renotify",
+         "invertresults" : "0",
+         "keywords" : [],
+         "label" : null,
+         "level" : 0,
+         "markdown_filter" : "0",
+         "name" : "RabbitMQ - IO sync Avg Time",
+         "notification_interval" : null,
+         "notification_options" : "w,c,r,u,f",
+         "oid" : null,
+         "plugin" : {
+            "name" : "check_rabbitmq_node"
+         },
+         "retry_check_interval" : "60",
+         "sensitive_arguments" : "1",
+         "servicegroup" : {
+            "name" : "Application - RabbitMQ - Node"
+         },
+         "snmptraprules" : [],
+         "stale_state" : "0",
+         "stale_text" : "",
+         "stale_threshold_seconds" : "3600",
+         "stalking" : "",
+         "volatile" : "0",
+         "warning_comparison" : null,
+         "warning_value" : null
+      },
+      {
+         "alert_from_failure" : "1",
+         "args" : "-H $HOSTADDRESS$ -m mem_alarm -P '%RABBITMQ_CREDENTIALS:4%' -u '%RABBITMQ_CREDENTIALS:1%' -p '%RABBITMQ_CREDENTIALS:2%' -n '%RABBITMQ_CREDENTIALS:3%'",
+         "attribute" : {
+            "name" : "RABBITMQ_CREDENTIALS"
+         },
+         "calculate_rate" : "no",
+         "cascaded_from" : null,
+         "check_attempts" : "3",
+         "check_freshness" : "0",
+         "check_interval" : "300",
+         "checktype" : {
+            "name" : "Active Plugin"
+         },
+         "critical_comparison" : null,
+         "critical_value" : null,
+         "dependencies" : [],
+         "description" : "Alarm used by the system to tell if there is enough memory left",
+         "event_handler" : "",
+         "event_handler_always_exec" : "0",
+         "flap_detection_enabled" : "1",
+         "freshness_type" : "renotify",
+         "invertresults" : "0",
+         "keywords" : [],
+         "label" : null,
+         "level" : 0,
+         "markdown_filter" : "0",
+         "name" : "RabbitMQ - Memory Alarm",
+         "notification_interval" : null,
+         "notification_options" : "w,c,r,u,f",
+         "oid" : null,
+         "plugin" : {
+            "name" : "check_rabbitmq_node"
+         },
+         "retry_check_interval" : "60",
+         "sensitive_arguments" : "1",
+         "servicegroup" : {
+            "name" : "Application - RabbitMQ - Node"
+         },
+         "snmptraprules" : [],
+         "stale_state" : "0",
+         "stale_text" : "",
+         "stale_threshold_seconds" : "3600",
+         "stalking" : "",
+         "volatile" : "0",
+         "warning_comparison" : null,
+         "warning_value" : null
+      },
+      {
+         "alert_from_failure" : "1",
+         "args" : "-H $HOSTADDRESS$ -m mem_used -P '%RABBITMQ_CREDENTIALS:4%' -u '%RABBITMQ_CREDENTIALS:1%' -p '%RABBITMQ_CREDENTIALS:2%' -n '%RABBITMQ_CREDENTIALS:3%'",
+         "attribute" : {
+            "name" : "RABBITMQ_CREDENTIALS"
+         },
+         "calculate_rate" : "no",
+         "cascaded_from" : null,
+         "check_attempts" : "3",
+         "check_freshness" : "0",
+         "check_interval" : "300",
+         "checktype" : {
+            "name" : "Active Plugin"
+         },
+         "critical_comparison" : null,
+         "critical_value" : null,
+         "dependencies" : [],
+         "description" : "Total memory used - bytes",
+         "event_handler" : "",
+         "event_handler_always_exec" : "0",
+         "flap_detection_enabled" : "1",
+         "freshness_type" : "renotify",
+         "invertresults" : "0",
+         "keywords" : [],
+         "label" : null,
+         "level" : 0,
+         "markdown_filter" : "0",
+         "name" : "RabbitMQ - Memory Used",
+         "notification_interval" : null,
+         "notification_options" : "w,c,r,u,f",
+         "oid" : null,
+         "plugin" : {
+            "name" : "check_rabbitmq_node"
+         },
+         "retry_check_interval" : "60",
+         "sensitive_arguments" : "1",
+         "servicegroup" : {
+            "name" : "Application - RabbitMQ - Node"
+         },
+         "snmptraprules" : [],
+         "stale_state" : "0",
+         "stale_text" : "",
+         "stale_threshold_seconds" : "3600",
+         "stalking" : "",
+         "volatile" : "0",
+         "warning_comparison" : null,
+         "warning_value" : null
+      },
+      {
+         "alert_from_failure" : "1",
+         "args" : "-H $HOSTADDRESS$ -m running -P '%RABBITMQ_CREDENTIALS:4%' -u '%RABBITMQ_CREDENTIALS:1%' -p '%RABBITMQ_CREDENTIALS:2%' -n '%RABBITMQ_CREDENTIALS:3%'",
+         "attribute" : {
+            "name" : "RABBITMQ_CREDENTIALS"
+         },
+         "calculate_rate" : "no",
+         "cascaded_from" : null,
+         "check_attempts" : "3",
+         "check_freshness" : "0",
+         "check_interval" : "300",
+         "checktype" : {
+            "name" : "Active Plugin"
+         },
+         "critical_comparison" : null,
+         "critical_value" : null,
+         "dependencies" : [],
+         "description" : "Checks if the node is running if the node is not running the connection to it may fail and this will return UNKNOWN, etc. Returns OK if running.",
+         "event_handler" : "",
+         "event_handler_always_exec" : "0",
+         "flap_detection_enabled" : "1",
+         "freshness_type" : "renotify",
+         "invertresults" : "0",
+         "keywords" : [],
+         "label" : null,
+         "level" : 0,
+         "markdown_filter" : "0",
+         "name" : "RabbitMQ - Node Running",
+         "notification_interval" : null,
+         "notification_options" : "w,c,r,u,f",
+         "oid" : null,
+         "plugin" : {
+            "name" : "check_rabbitmq_node"
+         },
+         "retry_check_interval" : "60",
+         "sensitive_arguments" : "1",
+         "servicegroup" : {
+            "name" : "Application - RabbitMQ - Node"
+         },
+         "snmptraprules" : [],
+         "stale_state" : "0",
+         "stale_text" : "",
+         "stale_threshold_seconds" : "3600",
+         "stalking" : "",
+         "volatile" : "0",
+         "warning_comparison" : null,
+         "warning_value" : null
+      },
+      {
+         "alert_from_failure" : "1",
+         "args" : "-H $HOSTADDRESS$ -m sockets_left -w 1000 -c 500 -P '%RABBITMQ_CREDENTIALS:4%' -u '%RABBITMQ_CREDENTIALS:1%' -p '%RABBITMQ_CREDENTIALS:2%' -n '%RABBITMQ_CREDENTIALS:3%'",
+         "attribute" : {
+            "name" : "RABBITMQ_CREDENTIALS"
+         },
+         "calculate_rate" : "no",
+         "cascaded_from" : null,
+         "check_attempts" : "3",
+         "check_freshness" : "0",
+         "check_interval" : "300",
+         "checktype" : {
+            "name" : "Active Plugin"
+         },
+         "critical_comparison" : null,
+         "critical_value" : null,
+         "dependencies" : [],
+         "description" : "File descriptors available for use as sockets remaining",
+         "event_handler" : "",
+         "event_handler_always_exec" : "0",
+         "flap_detection_enabled" : "1",
+         "freshness_type" : "renotify",
+         "invertresults" : "0",
+         "keywords" : [],
+         "label" : null,
+         "level" : 0,
+         "markdown_filter" : "0",
+         "name" : "RabbitMQ - Sockets Left",
+         "notification_interval" : null,
+         "notification_options" : "w,c,r,u,f",
+         "oid" : null,
+         "plugin" : {
+            "name" : "check_rabbitmq_node"
+         },
+         "retry_check_interval" : "60",
+         "sensitive_arguments" : "1",
+         "servicegroup" : {
+            "name" : "Application - RabbitMQ - Node"
+         },
+         "snmptraprules" : [],
+         "stale_state" : "0",
+         "stale_text" : "",
+         "stale_threshold_seconds" : "3600",
+         "stalking" : "",
+         "volatile" : "0",
+         "warning_comparison" : null,
+         "warning_value" : null
+      },
+      {
+         "alert_from_failure" : "1",
+         "args" : "-H $HOSTADDRESS$ -m sockets_used_percent -w 70 -c 80 -P '%RABBITMQ_CREDENTIALS:4%' -u '%RABBITMQ_CREDENTIALS:1%' -p '%RABBITMQ_CREDENTIALS:2%' -n '%RABBITMQ_CREDENTIALS:3%'",
+         "attribute" : {
+            "name" : "RABBITMQ_CREDENTIALS"
+         },
+         "calculate_rate" : "no",
+         "cascaded_from" : null,
+         "check_attempts" : "3",
+         "check_freshness" : "0",
+         "check_interval" : "300",
+         "checktype" : {
+            "name" : "Active Plugin"
+         },
+         "critical_comparison" : null,
+         "critical_value" : null,
+         "dependencies" : [],
+         "description" : "Percentage of file descriptors used as sockets",
+         "event_handler" : "",
+         "event_handler_always_exec" : "0",
+         "flap_detection_enabled" : "1",
+         "freshness_type" : "renotify",
+         "invertresults" : "0",
+         "keywords" : [],
+         "label" : null,
+         "level" : 0,
+         "markdown_filter" : "0",
+         "name" : "RabbitMQ - Sockets Used - percent",
+         "notification_interval" : null,
+         "notification_options" : "w,c,r,u,f",
+         "oid" : null,
+         "plugin" : {
+            "name" : "check_rabbitmq_node"
+         },
+         "retry_check_interval" : "60",
+         "sensitive_arguments" : "1",
+         "servicegroup" : {
+            "name" : "Application - RabbitMQ - Node"
+         },
+         "snmptraprules" : [],
+         "stale_state" : "0",
+         "stale_text" : "",
+         "stale_threshold_seconds" : "3600",
+         "stalking" : "",
+         "volatile" : "0",
+         "warning_comparison" : null,
+         "warning_value" : null
+      }
+   ],
+   "servicegroup" : [
+      {
+         "name" : "Application - RabbitMQ - Node"
+      }
+   ]
+}
