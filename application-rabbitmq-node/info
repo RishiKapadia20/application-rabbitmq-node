@@ -1,5 +1,5 @@
 NAME=com.opsview.opspack.application_rabbitmq_node
-VERSION=1.0
+VERSION=3.0
 ALIAS=Application - RabbitMQ - Node
 DEPENDENCIES=
-OPSVIEW_MIN_VERSION=
+OPSVIEW_MIN_VERSION=6.0.0

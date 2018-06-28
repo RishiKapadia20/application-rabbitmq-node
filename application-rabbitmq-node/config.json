@@ -133,7 +133,7 @@
          "calculate_rate" : "no",
          "cascaded_from" : null,
          "check_attempts" : "3",
-         "check_freshness" : "0",
+         "check_freshness" : "1",
          "check_interval" : "300",
          "checktype" : {
             "name" : "Active Plugin"
@@ -145,7 +145,6 @@
          "event_handler" : "",
          "event_handler_always_exec" : "0",
          "flap_detection_enabled" : "1",
-         "freshness_type" : "renotify",
          "invertresults" : "0",
          "keywords" : [],
          "label" : null,
@@ -164,9 +163,9 @@
             "name" : "Application - RabbitMQ - Node"
          },
          "snmptraprules" : [],
-         "stale_state" : "0",
-         "stale_text" : "",
-         "stale_threshold_seconds" : "3600",
+         "stale_state" : "3",
+         "stale_text" : "UNKNOWN: Service results are stale",
+         "stale_threshold_seconds" : "1800",
          "stalking" : "",
          "volatile" : "0",
          "warning_comparison" : null,
@@ -181,7 +180,7 @@
          "calculate_rate" : "no",
          "cascaded_from" : null,
          "check_attempts" : "3",
-         "check_freshness" : "0",
+         "check_freshness" : "1",
          "check_interval" : "300",
          "checktype" : {
             "name" : "Active Plugin"
@@ -193,7 +192,6 @@
          "event_handler" : "",
          "event_handler_always_exec" : "0",
          "flap_detection_enabled" : "1",
-         "freshness_type" : "renotify",
          "invertresults" : "0",
          "keywords" : [],
          "label" : null,
@@ -212,9 +210,9 @@
             "name" : "Application - RabbitMQ - Node"
          },
          "snmptraprules" : [],
-         "stale_state" : "0",
-         "stale_text" : "",
-         "stale_threshold_seconds" : "3600",
+         "stale_state" : "3",
+         "stale_text" : "UNKNOWN: Service results are stale",
+         "stale_threshold_seconds" : "1800",
          "stalking" : "",
          "volatile" : "0",
          "warning_comparison" : null,
@@ -229,7 +227,7 @@
          "calculate_rate" : "no",
          "cascaded_from" : null,
          "check_attempts" : "3",
-         "check_freshness" : "0",
+         "check_freshness" : "1",
          "check_interval" : "300",
          "checktype" : {
             "name" : "Active Plugin"
@@ -241,7 +239,6 @@
          "event_handler" : "",
          "event_handler_always_exec" : "0",
          "flap_detection_enabled" : "1",
-         "freshness_type" : "renotify",
          "invertresults" : "0",
          "keywords" : [],
          "label" : null,
@@ -260,9 +257,9 @@
             "name" : "Application - RabbitMQ - Node"
          },
          "snmptraprules" : [],
-         "stale_state" : "0",
-         "stale_text" : "",
-         "stale_threshold_seconds" : "3600",
+         "stale_state" : "3",
+         "stale_text" : "UNKNOWN: Service results are stale",
+         "stale_threshold_seconds" : "1800",
          "stalking" : "",
          "volatile" : "0",
          "warning_comparison" : null,
@@ -270,14 +267,14 @@
       },
       {
          "alert_from_failure" : "1",
-         "args" : "-H $HOSTADDRESS$ -m fd_left -w 1000 -c 500 -P '%RABBITMQ_CREDENTIALS:4%' -u '%RABBITMQ_CREDENTIALS:1%' -p '%RABBITMQ_CREDENTIALS:2%' -n '%RABBITMQ_CREDENTIALS:3%'",
+         "args" : "-H $HOSTADDRESS$ -m fd_left -w 1000: -c 500: -P '%RABBITMQ_CREDENTIALS:4%' -u '%RABBITMQ_CREDENTIALS:1%' -p '%RABBITMQ_CREDENTIALS:2%' -n '%RABBITMQ_CREDENTIALS:3%'",
          "attribute" : {
             "name" : "RABBITMQ_CREDENTIALS"
          },
          "calculate_rate" : "no",
          "cascaded_from" : null,
          "check_attempts" : "3",
-         "check_freshness" : "0",
+         "check_freshness" : "1",
          "check_interval" : "300",
          "checktype" : {
             "name" : "Active Plugin"
@@ -289,7 +286,6 @@
          "event_handler" : "",
          "event_handler_always_exec" : "0",
          "flap_detection_enabled" : "1",
-         "freshness_type" : "renotify",
          "invertresults" : "0",
          "keywords" : [],
          "label" : null,
@@ -308,9 +304,9 @@
             "name" : "Application - RabbitMQ - Node"
          },
          "snmptraprules" : [],
-         "stale_state" : "0",
-         "stale_text" : "",
-         "stale_threshold_seconds" : "3600",
+         "stale_state" : "3",
+         "stale_text" : "UNKNOWN: Service results are stale",
+         "stale_threshold_seconds" : "1800",
          "stalking" : "",
          "volatile" : "0",
          "warning_comparison" : null,
@@ -325,7 +321,7 @@
          "calculate_rate" : "no",
          "cascaded_from" : null,
          "check_attempts" : "3",
-         "check_freshness" : "0",
+         "check_freshness" : "1",
          "check_interval" : "300",
          "checktype" : {
             "name" : "Active Plugin"
@@ -337,7 +333,6 @@
          "event_handler" : "",
          "event_handler_always_exec" : "0",
          "flap_detection_enabled" : "1",
-         "freshness_type" : "renotify",
          "invertresults" : "0",
          "keywords" : [],
          "label" : null,
@@ -356,9 +351,9 @@
             "name" : "Application - RabbitMQ - Node"
          },
          "snmptraprules" : [],
-         "stale_state" : "0",
-         "stale_text" : "",
-         "stale_threshold_seconds" : "3600",
+         "stale_state" : "3",
+         "stale_text" : "UNKNOWN: Service results are stale",
+         "stale_threshold_seconds" : "1800",
          "stalking" : "",
          "volatile" : "0",
          "warning_comparison" : null,
@@ -373,7 +368,7 @@
          "calculate_rate" : "no",
          "cascaded_from" : null,
          "check_attempts" : "3",
-         "check_freshness" : "0",
+         "check_freshness" : "1",
          "check_interval" : "300",
          "checktype" : {
             "name" : "Active Plugin"
@@ -385,7 +380,6 @@
          "event_handler" : "",
          "event_handler_always_exec" : "0",
          "flap_detection_enabled" : "1",
-         "freshness_type" : "renotify",
          "invertresults" : "0",
          "keywords" : [],
          "label" : null,
@@ -404,9 +398,9 @@
             "name" : "Application - RabbitMQ - Node"
          },
          "snmptraprules" : [],
-         "stale_state" : "0",
-         "stale_text" : "",
-         "stale_threshold_seconds" : "3600",
+         "stale_state" : "3",
+         "stale_text" : "UNKNOWN: Service results are stale",
+         "stale_threshold_seconds" : "1800",
          "stalking" : "",
          "volatile" : "0",
          "warning_comparison" : null,
@@ -421,7 +415,7 @@
          "calculate_rate" : "no",
          "cascaded_from" : null,
          "check_attempts" : "3",
-         "check_freshness" : "0",
+         "check_freshness" : "1",
          "check_interval" : "300",
          "checktype" : {
             "name" : "Active Plugin"
@@ -433,7 +427,6 @@
          "event_handler" : "",
          "event_handler_always_exec" : "0",
          "flap_detection_enabled" : "1",
-         "freshness_type" : "renotify",
          "invertresults" : "0",
          "keywords" : [],
          "label" : null,
@@ -452,9 +445,9 @@
             "name" : "Application - RabbitMQ - Node"
          },
          "snmptraprules" : [],
-         "stale_state" : "0",
-         "stale_text" : "",
-         "stale_threshold_seconds" : "3600",
+         "stale_state" : "3",
+         "stale_text" : "UNKNOWN: Service results are stale",
+         "stale_threshold_seconds" : "1800",
          "stalking" : "",
          "volatile" : "0",
          "warning_comparison" : null,
@@ -469,7 +462,7 @@
          "calculate_rate" : "no",
          "cascaded_from" : null,
          "check_attempts" : "3",
-         "check_freshness" : "0",
+         "check_freshness" : "1",
          "check_interval" : "300",
          "checktype" : {
             "name" : "Active Plugin"
@@ -481,7 +474,6 @@
          "event_handler" : "",
          "event_handler_always_exec" : "0",
          "flap_detection_enabled" : "1",
-         "freshness_type" : "renotify",
          "invertresults" : "0",
          "keywords" : [],
          "label" : null,
@@ -500,9 +492,9 @@
             "name" : "Application - RabbitMQ - Node"
          },
          "snmptraprules" : [],
-         "stale_state" : "0",
-         "stale_text" : "",
-         "stale_threshold_seconds" : "3600",
+         "stale_state" : "3",
+         "stale_text" : "UNKNOWN: Service results are stale",
+         "stale_threshold_seconds" : "1800",
          "stalking" : "",
          "volatile" : "0",
          "warning_comparison" : null,
@@ -517,7 +509,7 @@
          "calculate_rate" : "no",
          "cascaded_from" : null,
          "check_attempts" : "3",
-         "check_freshness" : "0",
+         "check_freshness" : "1",
          "check_interval" : "300",
          "checktype" : {
             "name" : "Active Plugin"
@@ -529,7 +521,6 @@
          "event_handler" : "",
          "event_handler_always_exec" : "0",
          "flap_detection_enabled" : "1",
-         "freshness_type" : "renotify",
          "invertresults" : "0",
          "keywords" : [],
          "label" : null,
@@ -548,9 +539,9 @@
             "name" : "Application - RabbitMQ - Node"
          },
          "snmptraprules" : [],
-         "stale_state" : "0",
-         "stale_text" : "",
-         "stale_threshold_seconds" : "3600",
+         "stale_state" : "3",
+         "stale_text" : "UNKNOWN: Service results are stale",
+         "stale_threshold_seconds" : "1800",
          "stalking" : "",
          "volatile" : "0",
          "warning_comparison" : null,
@@ -565,7 +556,7 @@
          "calculate_rate" : "no",
          "cascaded_from" : null,
          "check_attempts" : "3",
-         "check_freshness" : "0",
+         "check_freshness" : "1",
          "check_interval" : "300",
          "checktype" : {
             "name" : "Active Plugin"
@@ -577,7 +568,6 @@
          "event_handler" : "",
          "event_handler_always_exec" : "0",
          "flap_detection_enabled" : "1",
-         "freshness_type" : "renotify",
          "invertresults" : "0",
          "keywords" : [],
          "label" : null,
@@ -596,9 +586,9 @@
             "name" : "Application - RabbitMQ - Node"
          },
          "snmptraprules" : [],
-         "stale_state" : "0",
-         "stale_text" : "",
-         "stale_threshold_seconds" : "3600",
+         "stale_state" : "3",
+         "stale_text" : "UNKNOWN: Service results are stale",
+         "stale_threshold_seconds" : "1800",
          "stalking" : "",
          "volatile" : "0",
          "warning_comparison" : null,
@@ -613,7 +603,7 @@
          "calculate_rate" : "no",
          "cascaded_from" : null,
          "check_attempts" : "3",
-         "check_freshness" : "0",
+         "check_freshness" : "1",
          "check_interval" : "300",
          "checktype" : {
             "name" : "Active Plugin"
@@ -625,7 +615,6 @@
          "event_handler" : "",
          "event_handler_always_exec" : "0",
          "flap_detection_enabled" : "1",
-         "freshness_type" : "renotify",
          "invertresults" : "0",
          "keywords" : [],
          "label" : null,
@@ -644,9 +633,9 @@
             "name" : "Application - RabbitMQ - Node"
          },
          "snmptraprules" : [],
-         "stale_state" : "0",
-         "stale_text" : "",
-         "stale_threshold_seconds" : "3600",
+         "stale_state" : "3",
+         "stale_text" : "UNKNOWN: Service results are stale",
+         "stale_threshold_seconds" : "1800",
          "stalking" : "",
          "volatile" : "0",
          "warning_comparison" : null,
@@ -661,7 +650,7 @@
          "calculate_rate" : "no",
          "cascaded_from" : null,
          "check_attempts" : "3",
-         "check_freshness" : "0",
+         "check_freshness" : "1",
          "check_interval" : "300",
          "checktype" : {
             "name" : "Active Plugin"
@@ -673,7 +662,6 @@
          "event_handler" : "",
          "event_handler_always_exec" : "0",
          "flap_detection_enabled" : "1",
-         "freshness_type" : "renotify",
          "invertresults" : "0",
          "keywords" : [],
          "label" : null,
@@ -692,9 +680,9 @@
             "name" : "Application - RabbitMQ - Node"
          },
          "snmptraprules" : [],
-         "stale_state" : "0",
-         "stale_text" : "",
-         "stale_threshold_seconds" : "3600",
+         "stale_state" : "3",
+         "stale_text" : "UNKNOWN: Service results are stale",
+         "stale_threshold_seconds" : "1800",
          "stalking" : "",
          "volatile" : "0",
          "warning_comparison" : null,
@@ -709,7 +697,7 @@
          "calculate_rate" : "no",
          "cascaded_from" : null,
          "check_attempts" : "3",
-         "check_freshness" : "0",
+         "check_freshness" : "1",
          "check_interval" : "300",
          "checktype" : {
             "name" : "Active Plugin"
@@ -721,7 +709,6 @@
          "event_handler" : "",
          "event_handler_always_exec" : "0",
          "flap_detection_enabled" : "1",
-         "freshness_type" : "renotify",
          "invertresults" : "0",
          "keywords" : [],
          "label" : null,
@@ -740,9 +727,9 @@
             "name" : "Application - RabbitMQ - Node"
          },
          "snmptraprules" : [],
-         "stale_state" : "0",
-         "stale_text" : "",
-         "stale_threshold_seconds" : "3600",
+         "stale_state" : "3",
+         "stale_text" : "UNKNOWN: Service results are stale",
+         "stale_threshold_seconds" : "1800",
          "stalking" : "",
          "volatile" : "0",
          "warning_comparison" : null,
@@ -757,7 +744,7 @@
          "calculate_rate" : "no",
          "cascaded_from" : null,
          "check_attempts" : "3",
-         "check_freshness" : "0",
+         "check_freshness" : "1",
          "check_interval" : "300",
          "checktype" : {
             "name" : "Active Plugin"
@@ -769,7 +756,6 @@
          "event_handler" : "",
          "event_handler_always_exec" : "0",
          "flap_detection_enabled" : "1",
-         "freshness_type" : "renotify",
          "invertresults" : "0",
          "keywords" : [],
          "label" : null,
@@ -788,9 +774,9 @@
             "name" : "Application - RabbitMQ - Node"
          },
          "snmptraprules" : [],
-         "stale_state" : "0",
-         "stale_text" : "",
-         "stale_threshold_seconds" : "3600",
+         "stale_state" : "3",
+         "stale_text" : "UNKNOWN: Service results are stale",
+         "stale_threshold_seconds" : "1800",
          "stalking" : "",
          "volatile" : "0",
          "warning_comparison" : null,
@@ -798,14 +784,14 @@
       },
       {
          "alert_from_failure" : "1",
-         "args" : "-H $HOSTADDRESS$ -m sockets_left -w 1000 -c 500 -P '%RABBITMQ_CREDENTIALS:4%' -u '%RABBITMQ_CREDENTIALS:1%' -p '%RABBITMQ_CREDENTIALS:2%' -n '%RABBITMQ_CREDENTIALS:3%'",
+         "args" : "-H $HOSTADDRESS$ -m sockets_left -w 1000: -c 500: -P '%RABBITMQ_CREDENTIALS:4%' -u '%RABBITMQ_CREDENTIALS:1%' -p '%RABBITMQ_CREDENTIALS:2%' -n '%RABBITMQ_CREDENTIALS:3%'",
          "attribute" : {
             "name" : "RABBITMQ_CREDENTIALS"
          },
          "calculate_rate" : "no",
          "cascaded_from" : null,
          "check_attempts" : "3",
-         "check_freshness" : "0",
+         "check_freshness" : "1",
          "check_interval" : "300",
          "checktype" : {
             "name" : "Active Plugin"
@@ -817,7 +803,6 @@
          "event_handler" : "",
          "event_handler_always_exec" : "0",
          "flap_detection_enabled" : "1",
-         "freshness_type" : "renotify",
          "invertresults" : "0",
          "keywords" : [],
          "label" : null,
@@ -836,9 +821,9 @@
             "name" : "Application - RabbitMQ - Node"
          },
          "snmptraprules" : [],
-         "stale_state" : "0",
-         "stale_text" : "",
-         "stale_threshold_seconds" : "3600",
+         "stale_state" : "3",
+         "stale_text" : "UNKNOWN: Service results are stale",
+         "stale_threshold_seconds" : "1800",
          "stalking" : "",
          "volatile" : "0",
          "warning_comparison" : null,
@@ -853,7 +838,7 @@
          "calculate_rate" : "no",
          "cascaded_from" : null,
          "check_attempts" : "3",
-         "check_freshness" : "0",
+         "check_freshness" : "1",
          "check_interval" : "300",
          "checktype" : {
             "name" : "Active Plugin"
@@ -865,7 +850,6 @@
          "event_handler" : "",
          "event_handler_always_exec" : "0",
          "flap_detection_enabled" : "1",
-         "freshness_type" : "renotify",
          "invertresults" : "0",
          "keywords" : [],
          "label" : null,
@@ -884,9 +868,9 @@
             "name" : "Application - RabbitMQ - Node"
          },
          "snmptraprules" : [],
-         "stale_state" : "0",
-         "stale_text" : "",
-         "stale_threshold_seconds" : "3600",
+         "stale_state" : "3",
+         "stale_text" : "UNKNOWN: Service results are stale",
+         "stale_threshold_seconds" : "1800",
          "stalking" : "",
          "volatile" : "0",
          "warning_comparison" : null,
